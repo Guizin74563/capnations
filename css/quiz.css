@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('Frame\ 1.png');
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.quiz-container {
+  background-color: white;
+  color: #0023e4;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #0023e4;
+}
+
+#question-box {
+  margin-bottom: 30px;
+}
+
+#options {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-btn {
+  padding: 15px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.option-btn:hover {
+  background-color: #d0d0d0;
+  transform: scale(1.05);
+}
+
+#next-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #0023e4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#next-btn:hover {
+  background-color: #001bb5;
+  transform: scale(1.05);
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0023e4;
+}
+
+.hidden {
+  display: none;
+}
+
+.capivara-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.capivara {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url('../image\ \(1\).png'); /* Substitua pelo caminho da imagem da capivara */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@media (max-width: 786px) {
+  body {
+    background-size: cover; /* Ajusta o fundo para a tela pequena */
+  }
+
+  .quiz-container {
+    padding: 20px;
+    width: 90%;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .option-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #next-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  #result h2 {
+    font-size: 18px;
+  }
+}
+
+/* Media Query para telas menores que 400px */
+@media (max-width: 400px) {
+  .quiz-container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .option-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #next-btn {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  #result h2 {
+    font-size: 16px;
+  }
+}
